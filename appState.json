@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "samrat/lambdaTest.js",
-        "code": "/*  20180508 Samrat\n    HOW TO USE:\n    It will receive parameter value from Connect as timeInQueue\n    This is a Connect Function which returns 2 parameter Mins and Seconds\n    Pleas\n*/ \n\nexports.handler = (event, context, callback) => {\n    \n            let input = event.Details.Parameters.timeInQueue;\n            console.log(\"TimeinQueue ::\" + input);\n            (input > 60) ? callback(null, \n            { \n                \"minutes\":Math.floor(parseInt(input) / 60),\n                \"seconds\": (input%60)\n            }\n            ) : callback(null, \n            { \n                \"minutes\": \"0\",\n                \"seconds\": input\n            });\n\n    \n};",
+        "code": "/*  20180508 Samrat\n    HOW TO USE:\n    It will receive parameter value from Connect as timeInQueue\n    This is a Connect Function which returns 2 parameter Mins and Seconds\n    Pleas\n*/ \n\nexports.handler = (event, context, callback) => {\n    \n            let input = event.Details.Parameters.timeInQueue;\n            console.log(\"Samrat TimeinQueue ::\" + input);\n            (input > 60) ? callback(null, \n            { \n                \"minutes\":Math.floor(parseInt(input) / 60),\n                \"seconds\": (input%60)\n            }\n            ) : callback(null, \n            { \n                \"minutes\": \"0\",\n                \"seconds\": input\n            });\n\n    \n};",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
@@ -30,12 +30,18 @@
           "timeout": 60,
           "memory": 384,
           "layers": []
+        },
+        "testCases": {
+          "c175029b-771f-437b-913a-9082424eb746": {
+            "id": "c175029b-771f-437b-913a-9082424eb746",
+            "name": "Unnamed event",
+            "functionId": "65531259-7fb2-4c89-9b43-e3215ad2c861",
+            "event": "{\n  \"Details\": {\n    \"ContactData\": {\n      \"Attributes\": {\n        \"Environment\": \"Production\"\n      },\n      \"Channel\": \"VOICE\",\n      \"ContactId\": \"b35f1fab-7da3-4c4c-beaa-432a64c87073\",\n      \"CustomerEndpoint\": {\n        \"Address\": \"+61432226989\",\n        \"Type\": \"TELEPHONE_NUMBER\"\n      },\n      \"InitialContactId\": \"b35f1fab-7da3-4c4c-beaa-432a64c87073\",\n      \"InitiationMethod\": \"INBOUND\",\n      \"InstanceARN\": \"arn:aws:connect:ap-southeast-2:773532153275:instance/61e67b91-99b8-4a59-9b76-ffce565dee64\",\n      \"MediaStreams\": {\n        \"Customer\": {\n          \"Audio\": null\n        }\n      },\n      \"PreviousContactId\": \"b35f1fab-7da3-4c4c-beaa-432a64c87073\",\n      \"Queue\": null,\n      \"SystemEndpoint\": {\n        \"Address\": \"+61480018845\",\n        \"Type\": \"TELEPHONE_NUMBER\"\n      }\n    },\n    \"Parameters\": {\n      \"timeInQueue\": \"4689\"\n    }\n  },\n  \"Name\": \"ContactFlowEvent\"\n}"
+          }
         }
       }
     },
-    "deletedFiles": [
-      "samrat/lambda.js"
-    ],
+    "deletedFiles": [],
     "rootNode": "9ed4cd87-b041-4d14-a354-1af15113d57c",
     "openFiles": [
       "65531259-7fb2-4c89-9b43-e3215ad2c861"
@@ -67,7 +73,7 @@
     "projectRegion": "ap-southeast-2",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1557329603271
+    "lastSave": 1557329930673
   },
   "VCS_STATE": {
     "provider": "GitHub",

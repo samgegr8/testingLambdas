@@ -8,7 +8,7 @@
 exports.handler = (event, context, callback) => {
     
             let input = event.Details.Parameters.timeInQueue;
-            console.log("TimeinQueue ::" + input);
+            console.log("Samrat TimeinQueue ::" + input);
             (input > 60) ? callback(null, 
             { 
                 "minutes":Math.floor(parseInt(input) / 60),
