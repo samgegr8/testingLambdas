@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "samrat/lambda.js",
-        "code": "var AWS= require(\"aws-sdk\")\n\nexports.handler = function (event, context, callback) {\n\n   console.log(\"Getting The values\" + event.stringify);\n    callback(null, { \"message\": \"Successfully executed\" });\n   \n}",
+        "code": "/*  20180508 Samrat\n    HOW TO USE:\n    It will receive parameter value from Connect as timeInQueue\n    This is a Connect Function which returns 2 parameter Mins and Seconds\n    Pleas\n*/ \n\nexports.handler = (event, context, callback) => {\n    \n            let input = event.Details.Parameters.timeInQueue;\n            console.log(\"TimeinQueue ::\" + input);\n            (input > 60) ? callback(null, \n            { \n                \"minutes\":Math.floor(parseInt(input) / 60),\n                \"seconds\": (input%60)\n            }\n            ) : callback(null, \n            { \n                \"minutes\": \"0\",\n                \"seconds\": input\n            });\n\n    \n};",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
@@ -65,7 +65,7 @@
     "projectRegion": "ap-southeast-2",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1557329333831
+    "lastSave": 1557329485862
   },
   "VCS_STATE": {
     "provider": "GitHub",
