@@ -1,0 +1,77 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "9ed4cd87-b041-4d14-a354-1af15113d57c": {
+        "id": "9ed4cd87-b041-4d14-a354-1af15113d57c",
+        "parent": null,
+        "name": "samrat",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "65531259-7fb2-4c89-9b43-e3215ad2c861"
+        ],
+        "isRemovable": false,
+        "filePath": "samrat"
+      },
+      "65531259-7fb2-4c89-9b43-e3215ad2c861": {
+        "id": "65531259-7fb2-4c89-9b43-e3215ad2c861",
+        "parent": "9ed4cd87-b041-4d14-a354-1af15113d57c",
+        "name": "lambda.js",
+        "type": "LAMBDA_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "samrat/lambda.js",
+        "code": "var AWS= require(\"aws-sdk\")\n\nexports.handler = function (event, context, callback) {\n\n    callback(null, { \"message\": \"Successfully executed\" });\n    let jsonObj = {};\n    let jsonStr = JSON.stringify(jsonObj);\n}",
+        "triggers": [],
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        }
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "9ed4cd87-b041-4d14-a354-1af15113d57c",
+    "openFiles": [
+      "65531259-7fb2-4c89-9b43-e3215ad2c861"
+    ],
+    "currentFileId": "65531259-7fb2-4c89-9b43-e3215ad2c861",
+    "resources": {},
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "samrat",
+    "projectDescription": "TestingofSigma",
+    "projectVersion": "1.0.0",
+    "projectRegion": "ap-southeast-2",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1557329214285
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "samrat",
+      "url": "https://github.com/samgegr8/testingLambdas"
+    }
+  }
+}
