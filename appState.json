@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "samrat/lambda.js",
-        "code": "var AWS= require(\"aws-sdk\")\n\nexports.handler = function (event, context, callback) {\n\n    callback(null, { \"message\": \"Successfully executed\" });\n    let jsonObj = {};\n    let jsonStr = JSON.stringify(jsonObj);\n}",
+        "code": "var AWS= require(\"aws-sdk\")\n\nexports.handler = function (event, context, callback) {\n\n   console.log(\"Getting The values\" + event.stringify);\n    callback(null, { \"message\": \"Successfully executed\" });\n   \n}",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
@@ -65,12 +65,12 @@
     "projectRegion": "ap-southeast-2",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1557329214285
+    "lastSave": 1557329333831
   },
   "VCS_STATE": {
     "provider": "GitHub",
     "repo": {
-      "name": "samrat",
+      "name": "testingLambdas",
       "url": "https://github.com/samgegr8/testingLambdas"
     }
   }
