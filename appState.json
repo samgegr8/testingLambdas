@@ -16,24 +16,26 @@
       "65531259-7fb2-4c89-9b43-e3215ad2c861": {
         "id": "65531259-7fb2-4c89-9b43-e3215ad2c861",
         "parent": "9ed4cd87-b041-4d14-a354-1af15113d57c",
-        "name": "lambda.js",
+        "name": "lambdaTest.js",
         "type": "LAMBDA_FILE",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "samrat/lambda.js",
+        "filePath": "samrat/lambdaTest.js",
         "code": "/*  20180508 Samrat\n    HOW TO USE:\n    It will receive parameter value from Connect as timeInQueue\n    This is a Connect Function which returns 2 parameter Mins and Seconds\n    Pleas\n*/ \n\nexports.handler = (event, context, callback) => {\n    \n            let input = event.Details.Parameters.timeInQueue;\n            console.log(\"TimeinQueue ::\" + input);\n            (input > 60) ? callback(null, \n            { \n                \"minutes\":Math.floor(parseInt(input) / 60),\n                \"seconds\": (input%60)\n            }\n            ) : callback(null, \n            { \n                \"minutes\": \"0\",\n                \"seconds\": input\n            });\n\n    \n};",
         "triggers": [],
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
           "timeout": 60,
-          "memory": 128,
+          "memory": 384,
           "layers": []
         }
       }
     },
-    "deletedFiles": [],
+    "deletedFiles": [
+      "samrat/lambda.js"
+    ],
     "rootNode": "9ed4cd87-b041-4d14-a354-1af15113d57c",
     "openFiles": [
       "65531259-7fb2-4c89-9b43-e3215ad2c861"
@@ -65,7 +67,7 @@
     "projectRegion": "ap-southeast-2",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1557329485862
+    "lastSave": 1557329603271
   },
   "VCS_STATE": {
     "provider": "GitHub",
